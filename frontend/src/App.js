@@ -27,8 +27,11 @@ function App() {
     };
 
     return (
-        <div className="App container ">
+        <div className="container">
+            <div className="d-flex align-items-center justify-content-between my-4">
             <h1>Full Stack Todo App</h1>
+            <img src={require("./images/logo512.png")} alt="Todo Logo" style={{ width: '100px', height: '100px' }} />
+            </div>
             {/* Conditional rendering based on login status */}
             {currentUser ? (
                 <TodoList username={currentUser} onLogout={handleLogout} />

@@ -107,32 +107,36 @@ function TodoList({ username, onLogout }) {
 
     return (
         <div className='container'>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div className='d-flex justify-content-between align-items-center my-2 border rounded p-3 bg-light'>
                 <h2>Todo List for: {username}</h2>
-                <button onClick={handleLogout}>Logout</button>
+                <button className="btn btn-dark" onClick={handleLogout}>Logout</button>
             </div>
             
-            <form onSubmit={handleAddTodo}>
+            <form className="my-4 mx-auto" style={{ maxWidth: '600px' }} onSubmit={handleAddTodo}>
                 <input
+                    className="form-control w-75 d-inline"
                     type="text"
                     placeholder="New Task"
                     value={newTask}
                     onChange={(e) => setNewTask(e.target.value)}
                 />
-                <button type="submit">Add Task</button>
+                <button className="btn btn-primary ms-3" type="submit">Add Task</button>
             </form>
 
-            <ul>
+            <ul className="list-group mx-auto" style={{ maxWidth: '600px' }}>
                 {todos.map(todo => (
-                    <li key={todo.id} style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
+                <li className="list-group-item d-flex justify-content-between align-items-center" key={todo.id}>
                         <input
                             type="checkbox"
                             checked={!!todo.done} // Convert MySQL's 0/1 to boolean
                             onChange={() => handleToggleDone(todo.id, todo.done)}
+                            className='me-2'
                         />
-                        {todo.task} 
-                        <small> (Updated: {new Date(todo.updated).toLocaleString()})</small>
-                        <button onClick={() => handleDeleteTodo(todo.id)} style={{ marginLeft: '10px' }}>Delete</button>
+                        <span style={{ textDecoration: todo.done ? 'line-through' : 'none' }}> 
+                            {todo.task} 
+                            <small> (Updated: {new Date(todo.updated).toLocaleString()})</small>
+                        </span>
+                        <button className="btn btn-danger" onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
                     </li>
                 ))}
             </ul>

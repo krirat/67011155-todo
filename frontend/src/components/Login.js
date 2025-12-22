@@ -51,16 +51,17 @@ function Login({ onLogin }) {
     };
     
     return (
-        <div>
+        <div className='mx-auto' style={{ maxWidth: '400px' }}>
             <h2>Login (Username Only)</h2>
             <form onSubmit={handleSubmit}>
                 <input
+                    className="form-control my-3"
                     type="text"
                     placeholder="Enter your username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <button type="submit">Login</button>
+                <button className="btn btn-primary" type="submit">Login</button>
 
             </form>
             {error && <p style={{ color: 'red' }}>{error}</p>}
