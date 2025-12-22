@@ -1,5 +1,6 @@
 // frontend/src/components/TodoList.js
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -105,7 +106,7 @@ function TodoList({ username, onLogout }) {
     };
 
     return (
-        <div>
+        <div className='container'>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h2>Todo List for: {username}</h2>
                 <button onClick={handleLogout}>Logout</button>

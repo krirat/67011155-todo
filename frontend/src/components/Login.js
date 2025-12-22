@@ -1,5 +1,6 @@
 // frontend/src/components/Login.js
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
