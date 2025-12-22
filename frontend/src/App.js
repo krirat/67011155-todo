@@ -27,7 +27,7 @@ function App() {
     };
 
     return (
-        <div className="container">
+        <div className="container px-4">
             <div className="d-flex align-items-center justify-content-between my-4">
             <h1>Full Stack Todo App</h1>
             <img src={require("./images/logo512.png")} alt="Todo Logo" style={{ width: '100px', height: '100px' }} />

@@ -51,7 +51,7 @@ function Login({ onLogin }) {
     };
     
     return (
-        <div className='mx-auto' style={{ maxWidth: '400px' }}>
+        <div className='mx-auto border rounded p-4 bg-light' style={{ maxWidth: '400px' }}>
             <h2>Login (Username Only)</h2>
             <form onSubmit={handleSubmit}>
                 <input
